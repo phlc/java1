@@ -10,5 +10,12 @@ public class ElseElseif{
       System.out.println("Nao deve mostrar -  6.");
     else
       System.out.println("Nao deve mostrar - 8.");
+
+    if (y < 3)
+      System.out.println("Ok.");
+    if (y < 6)
+      System.out.println("Deve mostrar -  Sem else if.");
+    else
+        System.out.println("Nao deve mostrar - 8.");
   }
 }
