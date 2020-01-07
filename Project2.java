@@ -1,5 +1,6 @@
 //imports
 import java.util.Scanner;
+import java.util.Random;
 
 //Class Project2
 public class Project2{
@@ -10,6 +11,7 @@ public class Project2{
   //main Function
   public static void main(String[] args){
     pick();
+    play();
 
 
 
@@ -41,7 +43,52 @@ public class Project2{
     else {
       System.out.println(name+" has picked Evens. Computer will be Odds");
     }// end else
-    System.out.println("\n-----------------");
+    System.out.println("\n-----------------\n");
 
   }//end of pick
+
+  //play Function
+  public static void play (){
+    //declarations
+    Scanner input = new Scanner(System.in);
+    Random rand = new Random();
+    int number = -1;
+    int computer = -1;
+    int result = -1;
+
+    //Number choice and check
+    do{
+    System.out.print("How many \"fingers\" do you put out? (0 - 5)? ");
+    number = input.nextInt();
+    }while (0>number || number>5);
+
+    //Computer number
+    computer = rand.nextInt(6);
+    System.out.println("Computer plays "+computer+".");
+    System.out.println("\n-----------------\n");
+
+    //Show result
+    result = number + computer;
+    System.out.print(number+" + "+computer+" = "+result+".\n"+result);
+    result = result%2;
+    if (result==0){
+      System.out.println(" is... even!");
+    }//end if
+    else{
+      System.out.println(" is... odd!");
+    }//end else
+
+    //Show winner
+    number = 0;
+    if (choice.equals("O")){
+      number=1;
+    }
+    if (result==number){
+      System.out.println("That means "+name+" wins! :-)");
+    }//end if
+    else {
+      System.out.println("That means computer wins! :-(");
+    }//end else
+    System.out.println("\n-----------------\n");
+  }//end of play Function
 }//end of class Project2
