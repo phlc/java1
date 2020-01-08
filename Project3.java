@@ -10,7 +10,7 @@ public class Project3{
     text = cipher(text, -27);
 
     //group
-    text = group(text, 2);
+    text = group(text, 5);
 
     //show
     System.out.println(text);
@@ -96,7 +96,7 @@ public class Project3{
     }//end for
 
     //padding
-    for (int i=0; i<(n-(s.length()%n)); i++){
+    for (int i=0; i<(n-(s.length()%n)) && 0!=(s.length()%n); i++){
       result = result+"x";
     }//end for
 
