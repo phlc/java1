@@ -9,6 +9,9 @@ public class Project3{
     //cipher
     text = cipher(text, -27);
 
+    //group
+    text = group(text, 2);
+
     //show
     System.out.println(text);
 
@@ -65,7 +68,7 @@ public class Project3{
     char c = ' ';
     String result = "";
 
-
+    //encrypt
     for (int i=0; i<s.length(); i++){
       c = s.charAt(i);
       c = charcrypt(c, k);
@@ -75,4 +78,29 @@ public class Project3{
     //return
     return(result);
   }//end of cipher Function
+
+  /*
+  group - Brokes a String in groups of n letters
+  @param: String, int n
+  @return: String of the groups separated by white space
+  */
+  public static String group(String s, int n){
+    //declarations
+    String result = "";
+
+    //group
+    for(int i=0; i<s.length(); i++){
+      result = result+s.charAt(i);
+      if ( ((i+1)%n)==0 && i!=(s.length()-1))
+        result = result+" ";
+    }//end for
+
+    //padding
+    for (int i=0; i<(n-(s.length()%n)); i++){
+      result = result+"x";
+    }//end for
+
+    //return
+    return(result);
+  }//end of group Function
 }//end of class Project3
